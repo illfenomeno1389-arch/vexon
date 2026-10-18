@@ -1,0 +1,1069 @@
+/* ==========================
+   VEXON - Main Stylesheet
+   ========================== */
+
+:root {
+    --background: #080b12;
+    --surface: #101621;
+    --surface-light: #171f2d;
+    --card-bg: #111824;
+
+    --text: #f2f5fa;
+    --muted: #8b97a9;
+
+    --accent: #00e5ff;
+    --accent-secondary: #7865ff;
+
+    --border: rgba(255, 255, 255, 0.08);
+    --shadow: rgba(0, 0, 0, 0.25);
+
+    --header-bg: rgba(8, 11, 18, 0.88);
+}
+
+body.neon-mode {
+    --background: #08040f;
+    --surface: #13091d;
+    --surface-light: #20102d;
+    --card-bg: #160c21;
+
+    --text: #fff4ff;
+    --muted: #b5a0c7;
+
+    --accent: #ff40d6;
+    --accent-secondary: #8a5cff;
+
+    --border: rgba(255, 64, 214, 0.18);
+    --shadow: rgba(0, 0, 0, 0.35);
+
+    --header-bg: rgba(8, 4, 15, 0.9);
+}
+
+
+/* تنظیمات عمومی */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+
+    font-family: Tahoma, Arial, sans-serif;
+
+    line-height: 1.8;
+    min-height: 100vh;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+    background: var(--accent);
+    color: #080b12;
+}
+
+
+/* نوار بالا */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 14px 6%;
+
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.logo {
+    font-family: Arial, sans-serif;
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    direction: ltr;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navigation a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.navigation a:hover {
+    color: var(--accent);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.icon-button {
+    min-width: 42px;
+    height: 42px;
+
+    padding: 0 10px;
+
+    color: var(--text);
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.icon-button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+
+/* بخش اصلی */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 75px 8%;
+
+    border-bottom: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            ellipse at 80% 20%,
+            rgba(0, 229, 255, 0.10),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 10% 90%,
+            rgba(120, 101, 255, 0.12),
+            transparent 40%
+        ),
+        var(--background);
+}
+
+body.neon-mode .hero {
+    background:
+        radial-gradient(
+            ellipse at 80% 20%,
+            rgba(255, 64, 214, 0.15),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 10% 90%,
+            rgba(138, 92, 255, 0.15),
+            transparent 40%
+        ),
+        var(--background);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+}
+
+.live-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 20px;
+
+    padding: 7px 13px;
+
+    border: 1px solid var(--border);
+    border-radius: 30px;
+
+    color: var(--muted);
+    background: var(--surface);
+
+    font-size: 12px;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+
+    display: inline-block;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px var(--accent);
+
+    animation: pulse 1.8s infinite;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 62px);
+    line-height: 1.5;
+    font-weight: 900;
+
+    margin-bottom: 16px;
+}
+
+.gradient-text {
+    color: var(--accent);
+    text-shadow: 0 0 35px rgba(0, 229, 255, 0.15);
+}
+
+body.neon-mode .gradient-text {
+    text-shadow: 0 0 35px rgba(255, 64, 214, 0.25);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 500px;
+    margin-bottom: 28px;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 12px 22px;
+
+    background: var(--accent);
+    color: #071019;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 229, 255, 0.18);
+}
+
+body.neon-mode .primary-button {
+    color: #190719;
+}
+
+
+/* تزئینات بخش اصلی */
+
+.hero-decoration {
+    position: absolute;
+    z-index: 1;
+
+    width: 350px;
+    height: 350px;
+
+    left: 8%;
+    top: 50%;
+
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.decoration-circle {
+    position: absolute;
+
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    border-radius: 50%;
+}
+
+.circle-one {
+    width: 290px;
+    height: 290px;
+
+    top: 30px;
+    left: 30px;
+
+    animation: rotate 35s linear infinite;
+}
+
+.circle-two {
+    width: 220px;
+    height: 220px;
+
+    top: 65px;
+    left: 65px;
+
+    border-style: dashed;
+    animation: rotate 25s linear infinite reverse;
+}
+
+.decoration-symbol {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: Arial, sans-serif;
+    font-size: 170px;
+    font-weight: 900;
+
+    color: var(--accent);
+    opacity: 0.09;
+}
+
+.decoration-line {
+    position: absolute;
+
+    width: 400px;
+    height: 1px;
+
+    top: 50%;
+    left: -25px;
+
+    transform: rotate(-35deg);
+
+    background: var(--accent);
+    opacity: 0.2;
+}
+
+
+/* بخش اخبار */
+
+.news-section {
+    padding: 75px 6%;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    margin-bottom: 28px;
+}
+
+.section-kicker {
+    display: block;
+
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+.section-heading h2,
+.sources-section h2 {
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 900;
+    line-height: 1.6;
+}
+
+.section-description {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.refresh-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+    min-height: 43px;
+
+    color: var(--text);
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 11px;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.refresh-button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.refresh-button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.refresh-icon {
+    font-size: 21px;
+    line-height: 1;
+}
+
+.refresh-button.is-loading .refresh-icon {
+    animation: rotate 1s linear infinite;
+}
+
+
+/* جست‌وجو */
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    max-width: 600px;
+
+    padding: 0 17px;
+    margin-bottom: 22px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    transition: border-color 0.2s ease;
+}
+
+.search-wrapper:focus-within {
+    border-color: var(--accent);
+}
+
+.search-icon {
+    color: var(--accent);
+    font-size: 27px;
+}
+
+.search-wrapper input {
+    width: 100%;
+    min-width: 0;
+    height: 52px;
+
+    border: none;
+    outline: none;
+
+    color: var(--text);
+    background: transparent;
+
+    font-size: 14px;
+}
+
+.search-wrapper input::placeholder {
+    color: var(--muted);
+}
+
+
+/* دسته‌بندی */
+
+.category-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.category-button {
+    padding: 9px 17px;
+
+    color: var(--muted);
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    transition: 0.2s ease;
+}
+
+.category-button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.category-button.active {
+    color: #071019;
+    background: var(--accent);
+    border-color: var(--accent);
+    font-weight: bold;
+}
+
+body.neon-mode .category-button.active {
+    color: #190719;
+}
+
+
+/* پیام وضعیت */
+
+.news-status {
+    min-height: 24px;
+    margin-bottom: 17px;
+
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* کارت‌های اخبار */
+
+.news-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.news-card {
+    min-width: 0;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: 0 8px 25px var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.news-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            var(--surface-light),
+            var(--surface)
+        );
+}
+
+.news-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.news-card:hover .news-image {
+    transform: scale(1.04);
+}
+
+.image-placeholder {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+    font-size: 55px;
+    font-weight: 900;
+
+    color: var(--accent);
+    opacity: 0.28;
+}
+
+.news-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    padding: 19px;
+}
+
+.news-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    margin-bottom: 12px;
+
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.news-source {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 4px 9px;
+
+    color: var(--accent);
+    background: var(--surface-light);
+
+    border-radius: 6px;
+
+    font-weight: bold;
+}
+
+.news-title {
+    margin-bottom: 13px;
+
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1.9;
+
+    overflow-wrap: anywhere;
+}
+
+.news-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+
+    overflow: hidden;
+    margin-bottom: 18px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+}
+
+
+.news-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-top: auto;
+    padding-top: 13px;
+
+    border-top: 1px solid var(--border);
+}
+
+.read-more {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.news-category-label {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* بارگذاری */
+
+.loading-card {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    min-height: 240px;
+
+    color: var(--muted);
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.loading-spinner {
+    width: 35px;
+    height: 35px;
+
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+
+    border-radius: 50%;
+
+    animation: rotate 0.8s linear infinite;
+}
+
+.no-results {
+    padding: 60px 20px;
+
+    text-align: center;
+    color: var(--muted);
+}
+
+.no-results[hidden] {
+    display: none !important;
+}
+
+.empty-symbol {
+    margin-bottom: 15px;
+
+    font-size: 55px;
+    color: var(--accent);
+}
+
+.no-results h3 {
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+
+/* منابع خبری */
+
+.sources-section {
+    padding: 65px 6% 80px;
+
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+}
+
+.sources-section h2 {
+    margin-bottom: 28px;
+}
+
+.sources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.source-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 25px;
+
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    transition: 0.25s ease;
+}
+
+.source-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.source-number {
+    display: block;
+
+    color: var(--accent);
+    opacity: 0.8;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+.source-card h3 {
+    margin-bottom: 7px;
+
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+}
+
+.source-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.source-arrow {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    color: var(--accent);
+    font-size: 20px;
+}
+
+html[dir="ltr"] .source-arrow {
+    left: auto;
+    right: 20px;
+}
+
+
+/* پایین سایت */
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    padding: 28px 6%;
+
+    border-top: 1px solid var(--border);
+}
+
+.footer .logo {
+    font-size: 23px;
+}
+
+.footer p,
+.copyright {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* انیمیشن‌ها */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+}
+
+
+/* تبلت */
+
+@media (max-width: 950px) {
+    .hero-decoration {
+        left: -100px;
+        opacity: 0.6;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sources-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* موبایل */
+
+@media (max-width: 650px) {
+    .header {
+        min-height: 68px;
+        padding: 12px 4%;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .navigation {
+        gap: 12px;
+    }
+
+    .navigation a {
+        font-size: 11px;
+    }
+
+    .header-actions {
+        gap: 6px;
+    }
+
+    .icon-button {
+        min-width: 35px;
+        height: 37px;
+        padding: 0 7px;
+        border-radius: 9px;
+    }
+
+    .hero {
+        min-height: 380px;
+        padding: 60px 6%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .hero-decoration {
+        left: -190px;
+        opacity: 0.35;
+    }
+
+    .news-section {
+        padding: 50px 4%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .section-heading h2,
+    .sources-section h2 {
+        font-size: 23px;
+    }
+
+    .section-description {
+        font-size: 11px;
+    }
+
+    .refresh-button {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .category-list {
+        gap: 7px;
+    }
+
+    .category-button {
+        padding: 8px 11px;
+        font-size: 11px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .news-title {
+        font-size: 16px;
+    }
+
+    .sources-section {
+        padding: 50px 4%;
+    }
+
+    .sources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+/* موبایل‌های خیلی کوچک */
+
+@media (max-width: 370px) {
+    .navigation {
+        gap: 8px;
+    }
+
+    .navigation a {
+        font-size: 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+    }
+}
