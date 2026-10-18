@@ -1,316 +1,214 @@
 <!DOCTYPE html>
+
 <html lang="fa" dir="rtl">
 <head>
+    <meta name="google-site-verification" content="UhN_q2dBUBCsURZyVGiFuHjDickxa1HJZu5wqPmrsUk" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#080b12">
-
+    <meta name="description" content="VEXON؛ تازه‌ترین اخبار، رویدادها و اطلاعات دنیای بازی‌های ویدیویی، کامپیوتر، پلی‌استیشن و ایکس‌باکس.">
     <title>VEXON | اخبار بازی‌ها</title>
-
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-
 <body>
 
-    <!-- نوار بالای سایت -->
-    <header class="header">
-        <a href="#" class="logo">
-            VEX<span>ON</span>
-        </a>
+```
+<!-- نوار بالای سایت -->
+<header class="header">
+    <a href="#" class="logo">
+        VEX<span>ON</span>
+    </a>
+    <nav class="navigation">
+        <a href="#home" data-fa="خانه" data-en="Home">خانه</a>
+        <a href="#news" data-fa="اخبار" data-en="News">اخبار</a>
+        <a href="#sources" data-fa="منابع" data-en="Sources">منابع</a>
+    </nav>
+    <div class="header-actions">
+        <button id="languageBtn" class="icon-button" type="button">EN</button>
+        <button id="themeBtn" class="icon-button" type="button" aria-label="تغییر تم">☀</button>
+    </div>
+</header>
 
-        <nav class="navigation">
-            <a href="#home" data-fa="خانه" data-en="Home">خانه</a>
-            <a href="#news" data-fa="اخبار" data-en="News">اخبار</a>
-            <a href="#sources" data-fa="منابع" data-en="Sources">منابع</a>
-        </nav>
+<!-- بخش اصلی -->
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="live-label">
+                <span class="live-dot"></span>
+                <span data-fa="دنیای بازی، لحظه‌به‌لحظه" data-en="Gaming, Up to Date">
+                    دنیای بازی، لحظه‌به‌لحظه
+                </span>
+            </div>
 
-        <div class="header-actions">
-            <button id="languageBtn" class="icon-button" type="button">
-                EN
-            </button>
+            <h1>
+                <span data-fa="دنیای بازی‌ها" data-en="The World of Gaming">
+                    دنیای بازی‌ها
+                </span>
+                <br>
+                <span class="gradient-text" data-fa="اینجا زنده است" data-en="Starts Here">
+                    اینجا زنده است
+                </span>
+            </h1>
 
-            <button id="themeBtn" class="icon-button" type="button"
-                    aria-label="تغییر تم">
-                ☀
+            <p data-fa="جدیدترین خبرها، اتفاقات و اطلاعات دنیای بازی را دنبال کن."
+               data-en="Discover the latest gaming news, updates and stories.">
+                جدیدترین خبرها، اتفاقات و اطلاعات دنیای بازی را دنبال کن.
+            </p>
+
+            <a href="#news" class="primary-button"
+               data-fa="مشاهده آخرین اخبار ←"
+               data-en="Explore Latest News →">
+                مشاهده آخرین اخبار ←
+            </a>
+        </div>
+
+        <div class="hero-decoration" aria-hidden="true">
+            <div class="decoration-circle circle-one"></div>
+            <div class="decoration-circle circle-two"></div>
+            <div class="decoration-symbol">V</div>
+            <div class="decoration-line"></div>
+        </div>
+    </section>
+
+    <!-- بخش اخبار -->
+    <section class="news-section" id="news">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker" data-fa="تازه‌های دنیای گیم" data-en="THE LATEST">
+                    تازه‌های دنیای گیم
+                </span>
+                <h2 data-fa="آخرین اخبار بازی‌ها" data-en="Latest Gaming News">
+                    آخرین اخبار بازی‌ها
+                </h2>
+                <p class="section-description"
+                   data-fa="خبرهای جدید از منابع خبری بازی‌ها"
+                   data-en="Fresh stories from gaming news sources">
+                    خبرهای جدید از منابع خبری بازی‌ها
+                </p>
+            </div>
+
+            <button id="refreshBtn" class="refresh-button" type="button">
+                <span class="refresh-icon">↻</span>
+                <span data-fa="به‌روزرسانی" data-en="Refresh">به‌روزرسانی</span>
             </button>
         </div>
-    </header>
 
+        <!-- جست‌وجو -->
+        <div class="search-wrapper">
+            <span class="search-icon">⌕</span>
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="جست‌وجو در اخبار..."
+                data-placeholder-fa="جست‌وجو در اخبار..."
+                data-placeholder-en="Search gaming news..."
+                autocomplete="off"
+            >
+        </div>
 
-    <!-- بخش اصلی -->
-    <main>
+        <!-- فیلتر دسته‌ها -->
+        <div class="category-list">
+            <button class="category-button active" data-category="all"
+                    data-fa="همه اخبار" data-en="All News" type="button">
+                همه اخبار
+            </button>
+            <button class="category-button" data-category="gta"
+                    data-fa="GTA" data-en="GTA" type="button">GTA</button>
+            <button class="category-button" data-category="playstation"
+                    data-fa="پلی‌استیشن" data-en="PlayStation" type="button">
+                پلی‌استیشن
+            </button>
+            <button class="category-button" data-category="xbox"
+                    data-fa="ایکس‌باکس" data-en="Xbox" type="button">
+                ایکس‌باکس
+            </button>
+            <button class="category-button" data-category="pc"
+                    data-fa="کامپیوتر" data-en="PC Gaming" type="button">
+                کامپیوتر
+            </button>
+        </div>
 
-        <section class="hero" id="home">
+        <!-- وضعیت دریافت اخبار -->
+        <div id="newsStatus" class="news-status" role="status">
+            در حال دریافت جدیدترین اخبار...
+        </div>
 
-            <div class="hero-content">
-                <div class="live-label">
-                    <span class="live-dot"></span>
-                    <span data-fa="دنیای بازی، لحظه‌به‌لحظه"
-                          data-en="Gaming, Up to Date">
-                        دنیای بازی، لحظه‌به‌لحظه
-                    </span>
-                </div>
-
-                <h1>
-                    <span data-fa="دنیای بازی‌ها"
-                          data-en="The World of Gaming">
-                        دنیای بازی‌ها
-                    </span>
-                    <br>
-
-                    <span class="gradient-text"
-                          data-fa="اینجا زنده است"
-                          data-en="Starts Here">
-                        اینجا زنده است
-                    </span>
-                </h1>
-
-                <p data-fa="جدیدترین خبرها، اتفاقات و اطلاعات دنیای بازی را دنبال کن."
-                   data-en="Discover the latest gaming news, updates and stories.">
-                    جدیدترین خبرها، اتفاقات و اطلاعات دنیای بازی را دنبال کن.
-                </p>
-
-                <a href="#news" class="primary-button"
-                   data-fa="مشاهده آخرین اخبار ←"
-                   data-en="Explore Latest News →">
-                    مشاهده آخرین اخبار ←
-                </a>
-            </div>
-
-            <div class="hero-decoration" aria-hidden="true">
-                <div class="decoration-circle circle-one"></div>
-                <div class="decoration-circle circle-two"></div>
-                <div class="decoration-symbol">V</div>
-                <div class="decoration-line"></div>
-            </div>
-
-        </section>
-
-
-        <!-- بخش اخبار -->
-        <section class="news-section" id="news">
-
-            <div class="section-heading">
-                <div>
-                    <span class="section-kicker"
-                          data-fa="تازه‌های دنیای گیم"
-                          data-en="THE LATEST">
-                        تازه‌های دنیای گیم
-                    </span>
-
-                    <h2 data-fa="آخرین اخبار بازی‌ها"
-                        data-en="Latest Gaming News">
-                        آخرین اخبار بازی‌ها
-                    </h2>
-
-                    <p class="section-description"
-                       data-fa="خبرهای جدید از منابع خبری بازی‌ها"
-                       data-en="Fresh stories from gaming news sources">
-                        خبرهای جدید از منابع خبری بازی‌ها
-                    </p>
-                </div>
-
-                <button id="refreshBtn" class="refresh-button" type="button">
-                    <span class="refresh-icon">↻</span>
-                    <span data-fa="به‌روزرسانی"
-                          data-en="Refresh">
-                        به‌روزرسانی
-                    </span>
-                </button>
-            </div>
-
-
-            <!-- جست‌وجو -->
-            <div class="search-wrapper">
-                <span class="search-icon">⌕</span>
-
-                <input
-                    type="search"
-                    id="searchInput"
-                    placeholder="جست‌وجو در اخبار..."
-                    data-placeholder-fa="جست‌وجو در اخبار..."
-                    data-placeholder-en="Search gaming news..."
-                    autocomplete="off"
-                >
-            </div>
-
-
-            <!-- فیلتر دسته‌ها -->
-            <div class="category-list">
-
-                <button class="category-button active"
-                        data-category="all"
-                        data-fa="همه اخبار"
-                        data-en="All News"
-                        type="button">
-                    همه اخبار
-                </button>
-
-                <button class="category-button"
-                        data-category="gta"
-                        data-fa="GTA"
-                        data-en="GTA"
-                        type="button">
-                    GTA
-                </button>
-
-                <button class="category-button"
-                        data-category="playstation"
-                        data-fa="پلی‌استیشن"
-                        data-en="PlayStation"
-                        type="button">
-                    پلی‌استیشن
-                </button>
-
-                <button class="category-button"
-                        data-category="xbox"
-                        data-fa="ایکس‌باکس"
-                        data-en="Xbox"
-                        type="button">
-                    ایکس‌باکس
-                </button>
-
-                <button class="category-button"
-                        data-category="pc"
-                        data-fa="کامپیوتر"
-                        data-en="PC Gaming"
-                        type="button">
-                    کامپیوتر
-                </button>
-
-            </div>
-
-
-            <!-- وضعیت دریافت اخبار -->
-            <div id="newsStatus" class="news-status" role="status">
-                در حال دریافت جدیدترین اخبار...
-            </div>
-
-
-            <!-- خبرهای خودکار اینجا نمایش داده می‌شوند -->
-            <div id="newsContainer" class="news-grid">
-
-                <div class="loading-card">
-                    <div class="loading-spinner"></div>
-
-                    <p data-fa="در حال دریافت اخبار..."
-                       data-en="Loading news...">
-                        در حال دریافت اخبار...
-                    </p>
-                </div>
-
-            </div>
-
-
-            <!-- پیام خالی بودن جست‌وجو -->
-            <div id="noResults" class="no-results" hidden>
-                <div class="empty-symbol">⌕</div>
-
-                <h3 data-fa="خبری پیدا نشد"
-                    data-en="No news found">
-                    خبری پیدا نشد
-                </h3>
-
-                <p data-fa="عبارت دیگری را جست‌وجو کن."
-                   data-en="Try another search term.">
-                    عبارت دیگری را جست‌وجو کن.
+        <!-- خبرهای خودکار -->
+        <div id="newsContainer" class="news-grid">
+            <div class="loading-card">
+                <div class="loading-spinner"></div>
+                <p data-fa="در حال دریافت اخبار..." data-en="Loading news...">
+                    در حال دریافت اخبار...
                 </p>
             </div>
+        </div>
 
-        </section>
+        <!-- پیام خالی بودن جست‌وجو -->
+        <div id="noResults" class="no-results" hidden>
+            <div class="empty-symbol">⌕</div>
+            <h3 data-fa="خبری پیدا نشد" data-en="No news found">خبری پیدا نشد</h3>
+            <p data-fa="عبارت دیگری را جست‌وجو کن."
+               data-en="Try another search term.">
+                عبارت دیگری را جست‌وجو کن.
+            </p>
+        </div>
+    </section>
 
-
-        <!-- منابع خبری -->
-        <section class="sources-section" id="sources">
-
-            <span class="section-kicker"
-                  data-fa="منابع خبری"
-                  data-en="NEWS SOURCES">
-                منابع خبری
-            </span>
-
-            <h2 data-fa="خبرها از کجا می‌آیند؟"
-                data-en="Where Do the Stories Come From?">
-                خبرها از کجا می‌آیند؟
-            </h2>
-
-            <div class="sources-grid">
-
-                <a href="https://www.ign.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="source-card">
-
-                    <span class="source-number">01</span>
-                    <h3>IGN</h3>
-
-                    <p data-fa="اخبار، نقد و بررسی بازی‌ها"
-                       data-en="Gaming news and reviews">
-                        اخبار، نقد و بررسی بازی‌ها
-                    </p>
-
-                    <span class="source-arrow">↗</span>
-                </a>
-
-
-                <a href="https://www.theverge.com/games"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="source-card">
-
-                    <span class="source-number">02</span>
-                    <h3>The Verge</h3>
-
-                    <p data-fa="بازی‌ها و فناوری"
-                       data-en="Gaming and technology">
-                        بازی‌ها و فناوری
-                    </p>
-
-                    <span class="source-arrow">↗</span>
-                </a>
-
-
-                <a href="https://www.pcgamer.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="source-card">
-
-                    <span class="source-number">03</span>
-                    <h3>PC Gamer</h3>
-
-                    <p data-fa="اخبار بازی‌های کامپیوتری"
-                       data-en="PC gaming news">
-                        اخبار بازی‌های کامپیوتری
-                    </p>
-
-                    <span class="source-arrow">↗</span>
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- پایین سایت -->
-    <footer class="footer">
-
-        <a href="#home" class="logo">
-            VEX<span>ON</span>
-        </a>
-
-        <p data-fa="دنیای بازی‌ها، همیشه به‌روز."
-           data-en="Your world of gaming, always updated.">
-            دنیای بازی‌ها، همیشه به‌روز.
-        </p>
-
-        <span class="copyright">
-            © 2026 VEXON
+    <!-- منابع خبری -->
+    <section class="sources-section" id="sources">
+        <span class="section-kicker" data-fa="منابع خبری" data-en="NEWS SOURCES">
+            منابع خبری
         </span>
+        <h2 data-fa="خبرها از کجا می‌آیند؟" data-en="Where Do the Stories Come From?">
+            خبرها از کجا می‌آیند؟
+        </h2>
 
-    </footer>
+        <div class="sources-grid">
+            <a href="https://www.ign.com/" target="_blank"
+               rel="noopener noreferrer" class="source-card">
+                <span class="source-number">01</span>
+                <h3>IGN</h3>
+                <p data-fa="اخبار، نقد و بررسی بازی‌ها"
+                   data-en="Gaming news and reviews">
+                    اخبار، نقد و بررسی بازی‌ها
+                </p>
+                <span class="source-arrow">↗</span>
+            </a>
+
+            <a href="https://www.theverge.com/games" target="_blank"
+               rel="noopener noreferrer" class="source-card">
+                <span class="source-number">02</span>
+                <h3>The Verge</h3>
+                <p data-fa="بازی‌ها و فناوری" data-en="Gaming and technology">
+                    بازی‌ها و فناوری
+                </p>
+                <span class="source-arrow">↗</span>
+            </a>
+
+            <a href="https://www.pcgamer.com/" target="_blank"
+               rel="noopener noreferrer" class="source-card">
+                <span class="source-number">03</span>
+                <h3>PC Gamer</h3>
+                <p data-fa="اخبار بازی‌های کامپیوتری" data-en="PC gaming news">
+                    اخبار بازی‌های کامپیوتری
+                </p>
+                <span class="source-arrow">↗</span>
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- پایین سایت -->
+<footer class="footer">
+    <a href="#home" class="logo">VEX<span>ON</span></a>
+    <p data-fa="دنیای بازی‌ها، همیشه به‌روز."
+       data-en="Your world of gaming, always updated.">
+        دنیای بازی‌ها، همیشه به‌روز.
+    </p>
+    <span class="copyright">© 2026 VEXON</span>
+</footer>
+```
 
 </body>
 </html>
